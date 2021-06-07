@@ -1,0 +1,9 @@
+clc
+
+A = magic(1000);
+
+B = rem(A,2) == 0;
+
+sum(B,'all')
+
+whos()
