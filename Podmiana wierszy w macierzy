@@ -1,0 +1,15 @@
+clc
+n = 6;
+M = magic(n)
+
+i = randi(n);
+j = i;
+while j == i
+    j = randi(n);
+end
+
+X = M(i, :);
+M(i,:) = M(j,:);
+M(j,:) = X;
+
+M
