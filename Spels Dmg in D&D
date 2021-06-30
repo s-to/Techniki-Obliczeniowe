@@ -1,0 +1,26 @@
+i = 1000000;    % ilosć prób
+j = 8;          % ilosć rzutów w pojedynczej próbie
+d = 6;          % kostka dmg
+
+clc
+suma = 0;
+poszczegulneWyniki = [1,2,3];
+sumaDoSreniej = 0;
+ileMaxWynikow = 0;
+
+for x = 1:i
+    suma = 0;
+    for y = 1:j
+    suma = suma + randi(d);
+    end
+    if(suma == j*d)
+       ileMaxWynikow = ileMaxWynikow + 1;
+    end
+    poszczegulneWyniki(x) = suma;
+    sumaDoSreniej = sumaDoSreniej + suma;
+end
+
+sredniDmg = sumaDoSreniej / i;
+disp("max dmg = " + j*d)
+disp("sredni dmg = " + sredniDmg)
+disp("ile idealnych wyników: " + ileMaxWynikow)
